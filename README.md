@@ -10,10 +10,10 @@ This package should be installed via npm. You must have npm installed first. The
 `npm install @nicolawealth/array_to_object`
 
 # Usage
-This package provides functionality to convert a string array into a record object with keys corresponding to the array entries and values of booleans all intially set to true.
+This package provides functionality to convert a string array into a record object with keys corresponding to the array entries and boolean values all intially set to true.
 
 # Interface
-The package exports the function `arrayToObject(arr)` which takes in an optional string array argument and returns a record as described above. If no value is provided to `arr` or if `arr` is undefined, an empty record will be returned.
+The package exports the function `arrayToObject(arr);` which takes in an optional string array argument and returns a record as described above. If no value is provided to `arr` or if `arr` is undefined, an empty record will be returned.
 
 # Testing
 Tests can be found in `array_to_object.test.ts` located in `array_to_object/src` and should be run with sinon, mocha and nyc.
