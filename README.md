@@ -13,7 +13,6 @@ This package should be installed via npm. You must have npm installed first. The
 This package provides functionality to convert a string array into a record object with keys corresponding to the array entries and values of booleans all intially set to true.
 
 # Interface
-arrayToObject = (p?: string[]) => 
 The package exports the function `arrayToObject(arr)` which takes in an optional string array argument and returns a record as described above. If no value is provided to `arr` or if `arr` is undefined, an empty record will be returned.
 
 # Testing
