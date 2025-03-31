@@ -40,7 +40,7 @@ jobs:
           git config --global user.name "skyehaik"
 
       - name: Mark the repository as safe
-        run: git config --global --add safe.directory /__w/ioc/ioc
+        run: git config --global --add safe.directory /__w/array_to_object/array_to_object
 
       - name: Verify remote URL
         run: |
