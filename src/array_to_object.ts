@@ -1,8 +1,8 @@
-export const arrayToObject = (p?: string[]) => {
-  const r: Record<string, boolean> = {};
-  if (p) {
-    for (const e of p) { r[e] = true; }
+export const arrayToObject = (arr?: string[]) => {
+  const rec: Record<string, boolean> = {};
+  if (arr) {
+    for (const entry of arr) { rec[entry] = true; }
   }
-  return r;
+  return rec;
 };
 
