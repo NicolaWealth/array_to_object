@@ -24,7 +24,8 @@ jobs:
         run: |
             COVERAGE=$(node -e "
             import { extractCoverage } from '@nicolawealth/code_coverage_extractor';
-            extractCoverage('./coverage/coverage-final.json', './codecov/badge.json');
+            const result = extractCoverage('./coverage/coverage-final.json', './codecov/badge.json');
+            console.log(result);
             " | tail -n 1)
             echo "COVERAGE=$(echo $COVERAGE | xargs)" >> $GITHUB_ENV
 
