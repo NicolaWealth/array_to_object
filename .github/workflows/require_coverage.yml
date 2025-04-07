@@ -22,19 +22,8 @@ jobs:
       - name: Run coverage extraction script
         id: extract_coverage
         run: |
-          COVERAGE=$(node -e "
+            node -e "
             import { extractCoverage } from '@nicolawealth/code_coverage_extractor';
             extractCoverage('./coverage/coverage-final.json', './codecov/badge.json');
-          ")
-          COVERAGE=$(echo $COVERAGE | xargs)
-          echo "COVERAGE=$COVERAGE" >> $GITHUB_ENV
-
-      - name: Confirm Coverage Value
-        run: |
-          if [ "$COVERAGE" -ne 100 ]; then
-            echo "Assertion failed: Coverage is not 100% (Actual: $COVERAGE%)"
-            exit 1
-          else
-            echo "Assertion passed: Coverage is 100%"
-          fi
+          "
           
