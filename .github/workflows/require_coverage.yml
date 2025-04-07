@@ -25,5 +25,5 @@ jobs:
             node -e "
             import { extractCoverage } from '@nicolawealth/code_coverage_extractor';
             extractCoverage('./coverage/coverage-final.json', './codecov/badge.json');
-          "
+            "
           
