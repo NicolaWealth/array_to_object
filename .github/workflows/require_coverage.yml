@@ -19,22 +19,20 @@ jobs:
       - run: npm ci
       - run: npm run cover:report
 
-      - name: Log version of @nicolawealth/code_coverage_extractor
-        run: |
-          node -e "
-          const path = require('path');
-          const packageJson = require(path.resolve('./node_modules/@nicolawealth/code_coverage_extractor/package.json'));
-          console.log('Using @nicolawealth/code_coverage_extractor version:', packageJson.version);
-          "
 
       - name: Run coverage extraction script
         id: extract_coverage
         run: |
+          COVERAGE=$(
           node -e "
+          const fs = require('fs');
           const { extractCoverage } = require('@nicolawealth/code_coverage_extractor');
-          const result = extractCoverage('./coverage/coverage-final.json', './codecov/badge.json');
-          console.log('Extracted Coverage:', result);
-          "
+          const coverageData = JSON.parse(fs.readFileSync('./coverage/coverage-final.json', 'utf-8'))
+          const result = extractCoverage(coverageData, './codecov/badge.json');
+          console.log(result);
+          ")
+          COVERAGE=$(echo $COVERAGE | xargs)
+          echo "COVERAGE=$COVERAGE" >> $GITHUB_ENV
       
       - name: Confirm Coverage Value
         run: |
