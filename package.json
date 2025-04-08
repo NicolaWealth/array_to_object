@@ -51,7 +51,7 @@
   "dependencies": {
   },
   "devDependencies": {
-    "@nicolawealth/code_coverage_extractor": "^0",
+    "@nicolawealth/code_coverage_extractor": "^1",
     "@types/mocha": "^9",
     "@types/node": "^22",
     "@types/sinon": "^10",

@@ -22,14 +22,11 @@ jobs:
       - name: Run coverage extraction script
         id: extract_coverage
         run: |
-          # Capture the output of the console log from the Node script
           COVERAGE=$(node -e "
-            const { extractCoverage } = require('@nicolawealth/code_coverage_extractor');
+            import { extractCoverage } from '@nicolawealth/code_coverage_extractor';
             const result = extractCoverage('./coverage/coverage-final.json', './codecov/badge.json');
             console.log(result);
           " | xargs)
-      
-          # Set the captured coverage value as a GitHub environment variable
           echo "COVERAGE=$COVERAGE" >> $GITHUB_ENV
       
       - name: Confirm Coverage Value
