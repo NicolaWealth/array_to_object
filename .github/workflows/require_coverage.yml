@@ -19,6 +19,14 @@ jobs:
       - run: npm ci
       - run: npm run cover:report
 
+      - name: Log version of @nicolawealth/code_coverage_extractor
+        run: |
+          node -e "
+          const path = require('path');
+          const packageJson = require(path.resolve('./node_modules/@nicolawealth/code_coverage_extractor/package.json'));
+          console.log('Using @nicolawealth/code_coverage_extractor version:', packageJson.version);
+          "
+
       - name: Run coverage extraction script
         id: extract_coverage
         run: |
