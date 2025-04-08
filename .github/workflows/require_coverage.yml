@@ -23,7 +23,7 @@ jobs:
         id: extract_coverage
         run: |
           COVERAGE=$(node -e "
-            import { extractCoverage } from '@nicolawealth/code_coverage_extractor';
+            const { extractCoverage } = require('@nicolawealth/code_coverage_extractor');
             const result = extractCoverage('./coverage/coverage-final.json', './codecov/badge.json');
             console.log(result);
           " | xargs)
