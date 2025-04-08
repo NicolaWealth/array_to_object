@@ -19,7 +19,6 @@ jobs:
       - run: npm ci
       - run: npm run cover:report
 
-
       - name: Run coverage extraction script
         id: extract_coverage
         run: |
