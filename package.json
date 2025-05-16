@@ -1,6 +1,6 @@
 {
   "name": "@nicolawealth/array_to_object",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./dist/index.umd.js",
   "module": "./dist/index.umd.js",
   "unpkg": "./dist/index.umd.js",
@@ -46,7 +46,7 @@
     "doc": "npx typedoc src/*.ts src/**/*.ts --out dist/doc"
   },
   "engines": {
-    "node": "^22"
+    "node": ">=22"
   },
   "dependencies": {
   },
